@@ -9,7 +9,7 @@
     "node": "16.x.x||18.x.x||20.x.x"
   },
   "scripts": {
-    "dev": "concurrently -k -n codegen,next 'graphql-codegen --watch' 'next dev'",
+    "dev": "concurrently -k -n codegen,next 'nodemon --exec \"graphql-codegen\"' 'next dev'",
     "codegen": "graphcommerce codegen-config && mesh build && graphql-codegen",
     "build": "graphcommerce codegen-config && mesh build && graphql-codegen && next build && next-sitemap",
     "start": "next start",
@@ -99,6 +99,7 @@
     "@types/react-dom": "^18.2.7",
     "@types/react-is": "^18.2.1",
     "eslint": "8.48.0",
+    "nodemon": "^3.0.3",
     "prettier": "3.0.3",
     "type-fest": "^4.3.1",
     "typescript": "5.2.2"
